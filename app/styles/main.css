@@ -1,0 +1,12 @@
+md-toolbar {
+  min-height: 49px;
+}
+
+md-tabs md-ink-bar {
+  color: white;
+  background-color: white;
+}
+
+md-list-item.selected .md-list-item-inner {
+  font-weight: bold;
+}

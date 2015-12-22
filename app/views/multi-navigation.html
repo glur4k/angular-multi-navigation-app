@@ -1,0 +1,28 @@
+<div layout="row">
+  <md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-left">
+    <md-toolbar></md-toolbar>
+    <md-content layout-padding>
+      <md-list ng-if="selectedSection">
+        <md-list-item
+          ng-repeat="subSection in selectedSection.subSections"
+          ng-click="selectSubSection(subSection)"
+          ng-class="{'selected' : selectedSubSection === subSection}">
+          {{subSection.title}}
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+  <div flex>
+    <md-toolbar>
+      <md-tabs md-selected="0" md-border-bottom md-no-pagination>
+        <md-tab
+          ng-click="selectSection(section)"
+          ng-repeat="section in sections" label="{{section.title}}"></md-tab>
+      </md-tabs>
+    </md-toolbar>
+    <md-content layout-padding flex>
+      <h1>{{selectedSubSection.title}}</h1>
+      {{selectedSubSection.content}}
+    </md-content>
+  </div>
+</div>
