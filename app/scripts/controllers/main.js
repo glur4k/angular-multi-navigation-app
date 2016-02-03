@@ -55,14 +55,4 @@ angular.module('multiNavigationApp')
         content: 'Content 3.4'
       }]
     }];
-    $scope.selectSection = function (section) {
-      $scope.selectedSection = section;
-      $scope.selectedSubSection = section.lastSelected || section.subSections[0];
-    };
-    $scope.selectSubSection = function (subSection) {
-      $scope.selectedSubSection = subSection;
-      $scope.selectedSection.lastSelected = subSection;
-    };
-    $scope.selectedSection = $scope.sections[0];
-    $scope.selectedSubSection = $scope.selectedSection.subSections[0];
   });
